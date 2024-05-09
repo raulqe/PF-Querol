@@ -2,10 +2,7 @@
 
 /*HEADER*/
 .background-header-find-tutors {
-    background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5a.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bg-img(url(../images/pixlr-image-generator-65eb22312e7af35202e36b5a.png),center,0);
 }
 
 /*MAIN*/
@@ -13,152 +10,106 @@
 /* First main section (box2) (Article+ video))*/
 
 .video {
-    width: 100%;
-    height: 150px;
+    @include wht-heig(100%,150px);
     position: relative;
     border: none;
 }
 
 /* Second main section (box3)-(map-search-section)*/
 .container-map-continent {
-    background-image: url(../images/Map-action.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 65%;
+    @include bg-img(url(../images/Map-action.jpg),50% 65%,0);
     border: 2px solid whitesmoke;
+    .map-continent-title{
+        @include wht-heig(400px,300px);
+       background-color: $bg-white-card ;
+       border-color: 2px solid black;
+       font-weight:500;
+       padding: 20px;
+       text-align: start;
+       box-shadow: 3px 3px 3px 3px $main-grey;
+       opacity: 70%;
+       &:hover{
+        transform: scale(120%);
+        opacity: 80%;
+       }
+    }
+    .search-tutors-continet {
+        background: $search-grey;
+        border: 3px solid gray;
+        border-radius: 15px;
+        position: relative;
+        top: 50px;
+        .input-search-btn {
+            max-width: 100%;
+            border-radius: 10px 0px 0px 10px;
+            border: 1px solid gray;
+            &:hover {
+                background-color: $search-bg-hov;
+                color: $search-btn-tex-hov;
+                transition: 1s;
+            }
+        }
+        .search-btn {
+            border-radius: 0 10px 10px 0px;
+            border: 2px solid $search-grey;
+        }
+        .search-svg {
+            @include wht-heig(16px,16px);
+            border-radius: 15px;
+        }
+        
+    }
 
-    .geo-loc-Eur {
-        width: 30px;
-        height: 30px;
-        color: black;
-        position: relative;
-        bottom: 35px;
-        right: 30px;
-    }
-    .geo-loc-Asi {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        bottom: 70px;
-        left: 100px;
-    
-    }
-    .geo-loc-Aus {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        left: 180px;
-        top: 75px;
-    }
-    .geo-loc-Afr {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        right: 5px;
-        bottom: 50px;
-    }
-    .geo-loc-NAme {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        right: 230px;
-        bottom: 150px;
-    }
-    .geo-loc-SAme {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        right: 140px;
-        bottom: 50px;
-    }
+   
 }
-
-.continent-map {
-    width: 90%;
-    height: 100%;
-    position: relative;
-    border: 2px solid white;
-    object-fit: cover;
-    z-index: 1;
-}
-
 
 /*main section fomr (Search-btn)*/
-.search-tutors-continet {
-    background: #6b6b6c;
-    border: 3px solid gray;
-    border-radius: 15px;
-    position: relative;
-    top: 150px;
-    .input-search-btn {
-        max-width: 89%;
-        border-radius: 10px 0px 0px 10px;
-        border: solid gray;
-        &:hover {
-            background-color: rgb(224, 224, 224);
-            color: rgb(134, 134, 134);
-            transition: 1s;
-        }
-    }
-    .search-btn {
-        border-radius: 0 10px 10px 0px;
-        border: 2px solid #6b6b6c;
-    }
-    .search-svg {
-        width: 16px;
-        height: 16px;
-        border-radius: 15px;
-    }
-    
-}
+
 
 .tutors-card {
-    background-image: url(../images/tutors-image.jpg);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    @include bg-img(url(../images/tutors-image.jpg),50%,0);
     .card-title-tutors {
-        font-size: larger;
+        width: 100%;
+        height: 50px;
+        font-size: 1.5rem;
         font-weight: 700;
         padding-top: 35px;
         z-index: 2;
     }
-}
-
-.rounded-card {
-    width: 270px;
-    height: 270px;
-    z-index: 2;
+    .card-continer{
+        @include flex(row,nowrap,center,space-between,150px);
+        .rounded-card {
+            @include wht-heig(290px,290px);
+            border-radius: 50%;
+            border: 2px solid black;
+            opacity: 95%;
+            transition: 1s;
+            z-index: 2;
+            &:hover{
+                background-color: #acaaaa;
+                color:rgb(29, 27, 27);
+            }
+        }
+    }
 }
 
 /*Fourth main section (cards)*/
 
 .acount_form_section {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    width: 100%;
-    height: 700px;
-    background-color: rgb(238 235 223);
+    @include wht-heig(100%,700px);
+    @include flex(column,wrap,center,0,0);
+    background-color: $text-btn-white;
     overflow: hidden;
     .main_Acount_form {
-        display: flex;
-        flex-flow: row wrap;
-        background-color: rgb(165, 165, 170);
-        align-items: center;
-        width: 95%;
-        height: 550px;
+        @include wht-heig(95%,550px);
+        @include flex(row,wrap,center,0,0);
+        background-color: $grey-form;
         padding: 10px;
         border: 3px solid #f7f6f6;
     }
     .acount_form_title {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: start;
-        justify-content: center;
-        width: 100%;
-        height: 15%;
+        @include wht-heig(100%,15%);
+        @include flex(row,nowrap,start,center,0);
         padding-right: 10px;
     }
 
@@ -168,15 +119,11 @@
 
 
 .acount_form_column_1 {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: start;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
+    @include wht-heig(100%,100%);
+    @include flex(row,wrap,start,flex-start,0);
     padding: 8px;
-    background-color: rgb(187, 188, 193);
-    border: 2px solid #f7f6f6;
+    background-color: $main-grey;
+    border: 2px solid bg-white-card;
     z-index: 2;
     label {
         padding: 5px 4.5rem 0 0;
@@ -185,19 +132,19 @@
         padding: 8px;
         flex-grow: 1;
         text-align: start;
-        border: rgb(187, 188, 193);
+        border: $main-grey;
         outline: none;
         &:hover{
-            background-color: rgb(224, 224, 224);
-            color: rgb(134, 134, 134);
+            background-color: search-bg-hov;
+            color: $search-btn-tex-hov;
             transition: 1s;
         }
     }
     select {
         outline: none;
         &:hover {
-            background-color: rgb(224, 224, 224);
-            color: rgb(134, 134, 134);
+            background-color: $search-bg-hov;
+            color:$search-btn-tex-hov;
             transition: 1s;
         }
     }
@@ -238,12 +185,8 @@
     }
     /* form_ lable_dropdown buttons */
     .acount_form_dopdown {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: flex-end;
-        justify-content: start;
+        @include wht-heig(100%,50px);
+        @include flex(row,nowrap,flex-end,start,0);
         border: none;
         line-height: 3;
     
@@ -273,10 +216,9 @@
 /*form_buttons*/
 
 .acount_form_btns {
+    @include wht-heig(100%,100%);
     display: flex;
     flex-flow: row nowrap;
-    width: 100%;
-    height: 100%;
     border: none;
     .form_btn_submit {
         width: 100%;
@@ -285,25 +227,22 @@
         padding-right: 25px;
     }
     .btn_reset {
+        @include wht-heig(90px,30px);
         display: block;
-        width: 90px;
-        height: 30px;
-        background-color: rgb(227, 227, 227);
+        background-color: $bg-btn-form;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .btn_submit {
+        @include wht-heig(90px,30px);
+        display: block;
+        background-color: $bg-btn-form;
         cursor: pointer;
         transition: 1s;
     }
     .btn_reset:hover,.btn_submit:hover {
-    background-color: rgb(214, 213, 213);
+    background-color: $bg-btn-form-hov;
     }
-}
-
-.btn_submit {
-    display: block;
-    width: 90px;
-    height: 30px;
-    background-color: rgb(227, 227, 227);
-    cursor: pointer;
-    transition: 1s;
 }
 
 /*End find tutors*/

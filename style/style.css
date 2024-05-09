@@ -1,10 +1,18 @@
 /*ROOT IMPORTS*/
 /*Scss Imports*/
 /*Base*/
-/* font-family: "Frank Ruhl Libre", serif;
-   font_family:Roboto/Font-weight; */
+/*--FONTS--*/
+/* font-family: "Frank Ruhl Libre", serif; font_family:Roboto/Font-weight; */
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/*--VARS--*/
+/* Colors */
+/*border*/
+/* with/height*/
+/*Flex mixin */
+/*Background Image*/
+/* with/height*/
+/*Geo-loc*/
 /*Components*/
 /* Navbar */
 .logo-nav {
@@ -58,9 +66,11 @@
 
 .btn-box {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 .btn-box .btn_header {
   display: flex;
@@ -75,6 +85,7 @@
   padding: 10px 50px 20px 50px;
   border: 1px solid black;
   transition: 1.5s;
+  z-index: 1;
 }
 .btn-box .btn_header:hover {
   box-shadow: 2px 2px 2px #f7f6f6;
@@ -85,9 +96,11 @@
 footer.nav-item {
   width: 60px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   justify-content: space-around;
-  text-align: center;
+  gap: 0;
   transition: 1s;
 }
 
@@ -98,15 +111,19 @@ footer.nav-item {
 .secondary-footer {
   width: 100%;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
 .secondary-footer .logo-footer {
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
 
 /*Layouts*/
@@ -138,7 +155,6 @@ header {
   width: 100%;
   height: 350px;
   position: relative;
-  background-color: rgb(165, 165, 170);
   border-bottom: 1px solid black;
 }
 
@@ -146,11 +162,13 @@ header {
 /* General main elements */
 .box-container {
   display: flex;
-  flex-flow: row nowrap;
-  max-width: 100%;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  max-width: 100%;
+  height: 100%;
 }
 
 /*Grid template areas declaration*/
@@ -165,14 +183,23 @@ header {
 /* Grid area first section  box-container */
 .b2 {
   grid-area: box2;
-  flex-flow: column nowrap;
-  height: max-content;
-  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: 0;
+  text-align: center;
+  height: max-content;
   background-color: rgb(187, 188, 193);
   padding-bottom: 15px;
 }
 .b2 .text-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: 0;
+  gap: 0;
   background-color: rgba(225, 225, 227, 0.527);
   max-width: 100%;
   max-height: 700px;
@@ -209,8 +236,11 @@ header {
 .b3 {
   grid-area: box3;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: 0;
+  gap: 0;
   background-color: rgb(187, 188, 193);
   width: 100%;
   padding-top: 10px;
@@ -226,8 +256,10 @@ header {
 
 .logo-title-container {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: 0;
   text-align: center;
   position: relative;
   text-shadow: black 3px -3px;
@@ -235,7 +267,6 @@ header {
 .logo-title-container .logo-title {
   width: 75%;
   height: auto;
-  border-radius: 200px;
   position: relative;
   top: 250px;
   color: #f7f6f6;
@@ -260,41 +291,53 @@ header {
 /* Grid area third section  cards */
 .b5 {
   grid-area: box5;
-  flex-flow: column nowrap;
-  align-items: center;
-  background-color: rgb(238, 235, 223);
   width: 100%;
   height: 650px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: 0;
+  gap: 0;
+  background-color: rgb(238, 235, 223);
   padding: 10px;
   border-top: 1px solid black;
 }
 .b5 .card_title {
-  top: 30px;
+  position: relative;
+  top: 20px;
 }
 .b5 .card-continer {
   max-width: 100%;
   height: 650px;
   display: flex;
-  flex-flow: row nowrap;
-  gap: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: 0;
+  gap: 20px;
 }
 .b5 .card-continer h2 {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  position: relative;
-  top: 5px;
   width: 50%;
   height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  top: 5px;
   font-size: 1.5rem;
   color: black;
 }
 .b5 .card {
   display: flex;
-  flex-flow: column nowrap;
-  text-align: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: 0;
   justify-content: center;
+  text-align: center;
   border: 1px solid black;
   max-width: 400px;
   min-height: 250px;
@@ -304,8 +347,8 @@ header {
 .b5 .card_border_number {
   width: 30px;
   height: 30px;
-  position: relative;
   justify-content: center;
+  position: relative;
   left: 0px;
   bottom: 5px;
   border-bottom: 2px solid black;
@@ -328,14 +371,17 @@ header {
   bottom: 2px;
 }
 .b5 .subtitle {
-  padding-bottom: 20px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 600;
   width: 100%;
   height: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: 0;
+  justify-content: center;
+  text-align: 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .b5 .content {
   font-size: 0.9rem;
@@ -366,12 +412,16 @@ header {
 /* Grid area fourth section  (Download buttons) */
 .b7 {
   grid-area: box7;
-  flex-flow: row nowrap;
-  background: linear-gradient(#bbbcc1, #ababac);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: 0;
+  justify-content: space-around;
+  gap: 0;
+  background: linear-gradient(#bbbcc1, #6b6b6c);
   width: 100%;
   padding: 20px;
   border-top: 1px solid black;
-  justify-content: space-around;
 }
 .b7 .download_title {
   font-size: 1rem;
@@ -390,14 +440,14 @@ header {
   height: 40px;
 }
 .b7 .btn_dwl {
+  width: 140px;
+  height: 80px;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-size: x-small;
   font-style: normal;
-  color: #f7f6f6;
+  color: rgb(238, 235, 223);
   background-color: rgb(101, 108, 101);
-  width: 140px;
-  height: 80px;
   padding: 10px;
   text-align: center;
 }
@@ -409,8 +459,11 @@ header {
 .b4 {
   grid-area: box4;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: 0;
+  text-align: 0;
   background-color: rgb(187, 188, 193);
   width: 100%;
   height: 350px;
@@ -421,16 +474,19 @@ header {
   width: 100%;
   height: 60px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  gap: 0;
 }
 .b4 .carousel-section {
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
 .b4 .client-experiences {
   width: 100%;
@@ -444,8 +500,9 @@ header {
 .background-header-how-works {
   background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5c.png);
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
 }
 
 .Orange_image {
@@ -468,10 +525,12 @@ header {
 }
 
 .redirection_btn {
-  display: flex;
-  flex-flow: row nowrap;
   width: 200px;
   height: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: 0;
   justify-content: center;
   text-align: center;
   position: relative;
@@ -489,21 +548,24 @@ header {
 }
 
 .office-container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-content: center;
   width: 95%;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: 0;
+  gap: 0;
+  align-content: center;
 }
 
 .office {
   width: 100%;
   height: 160px;
+  object-fit: cover;
   position: relative;
   bottom: 100%;
   border: 2px solid whitesmoke;
-  object-fit: cover;
 }
 
 /*End how it works*/
@@ -512,8 +574,9 @@ header {
 .background-header-find-tutors {
   background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5a.png);
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
 }
 
 /*MAIN*/
@@ -528,151 +591,142 @@ header {
 /* Second main section (box3)-(map-search-section)*/
 .container-map-continent {
   background-image: url(../images/Map-action.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
   border: 2px solid whitesmoke;
 }
-.container-map-continent .geo-loc-Eur {
-  width: 30px;
-  height: 30px;
-  color: black;
-  position: relative;
-  bottom: 35px;
-  right: 30px;
+.container-map-continent .map-continent-title {
+  width: 400px;
+  height: 300px;
+  background-color: #f7f6f6;
+  border-color: 2px solid black;
+  font-weight: 500;
+  padding: 20px;
+  text-align: start;
+  box-shadow: 3px 3px 3px 3px rgb(187, 188, 193);
+  opacity: 70%;
 }
-.container-map-continent .geo-loc-Asi {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  bottom: 70px;
-  left: 100px;
+.container-map-continent .map-continent-title:hover {
+  transform: scale(120%);
+  opacity: 80%;
 }
-.container-map-continent .geo-loc-Aus {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  left: 180px;
-  top: 75px;
-}
-.container-map-continent .geo-loc-Afr {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  right: 5px;
-  bottom: 50px;
-}
-.container-map-continent .geo-loc-NAme {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  right: 230px;
-  bottom: 150px;
-}
-.container-map-continent .geo-loc-SAme {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  right: 140px;
-  bottom: 50px;
-}
-
-.continent-map {
-  width: 90%;
-  height: 100%;
-  position: relative;
-  border: 2px solid white;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/*main section fomr (Search-btn)*/
-.search-tutors-continet {
+.container-map-continent .search-tutors-continet {
   background: #6b6b6c;
   border: 3px solid gray;
   border-radius: 15px;
   position: relative;
-  top: 150px;
+  top: 50px;
 }
-.search-tutors-continet .input-search-btn {
-  max-width: 89%;
+.container-map-continent .search-tutors-continet .input-search-btn {
+  max-width: 100%;
   border-radius: 10px 0px 0px 10px;
-  border: solid gray;
+  border: 1px solid gray;
 }
-.search-tutors-continet .input-search-btn:hover {
+.container-map-continent .search-tutors-continet .input-search-btn:hover {
   background-color: rgb(224, 224, 224);
   color: rgb(134, 134, 134);
   transition: 1s;
 }
-.search-tutors-continet .search-btn {
+.container-map-continent .search-tutors-continet .search-btn {
   border-radius: 0 10px 10px 0px;
   border: 2px solid #6b6b6c;
 }
-.search-tutors-continet .search-svg {
+.container-map-continent .search-tutors-continet .search-svg {
   width: 16px;
   height: 16px;
   border-radius: 15px;
 }
 
+/*main section fomr (Search-btn)*/
 .tutors-card {
   background-image: url(../images/tutors-image.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: grayscale(0);
 }
 .tutors-card .card-title-tutors {
-  font-size: larger;
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
   font-weight: 700;
   padding-top: 35px;
   z-index: 2;
 }
-
-.rounded-card {
-  width: 270px;
-  height: 270px;
+.tutors-card .card-continer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
+}
+.tutors-card .card-continer .rounded-card {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  border: 2px solid black;
+  opacity: 95%;
+  transition: 1s;
   z-index: 2;
+}
+.tutors-card .card-continer .rounded-card:hover {
+  background-color: #acaaaa;
+  color: rgb(29, 27, 27);
 }
 
 /*Fourth main section (cards)*/
 .acount_form_section {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
   width: 100%;
   height: 700px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: 0;
+  gap: 0;
   background-color: rgb(238, 235, 223);
   overflow: hidden;
 }
 .acount_form_section .main_Acount_form {
-  display: flex;
-  flex-flow: row wrap;
-  background-color: rgb(165, 165, 170);
-  align-items: center;
   width: 95%;
   height: 550px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: 0;
+  gap: 0;
+  background-color: rgb(165, 165, 170);
   padding: 10px;
   border: 3px solid #f7f6f6;
 }
 .acount_form_section .acount_form_title {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: start;
-  justify-content: center;
   width: 100%;
   height: 15%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 0;
   padding-right: 10px;
 }
 
 .acount_form_column_1 {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: start;
-  justify-content: flex-start;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 0;
   padding: 8px;
   background-color: rgb(187, 188, 193);
-  border: 2px solid #f7f6f6;
+  border: 2px solid bg-white-card;
   z-index: 2;
   /* form_ lable_dropdown buttons */
 }
@@ -687,7 +741,7 @@ header {
   outline: none;
 }
 .acount_form_column_1 input:hover {
-  background-color: rgb(224, 224, 224);
+  background-color: search-bg-hov;
   color: rgb(134, 134, 134);
   transition: 1s;
 }
@@ -736,9 +790,11 @@ header {
   width: 100%;
   height: 50px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: flex-end;
   justify-content: start;
+  gap: 0;
   border: none;
   line-height: 3;
 }
@@ -761,10 +817,10 @@ header {
 
 /*form_buttons*/
 .acount_form_btns {
-  display: flex;
-  flex-flow: row nowrap;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
   border: none;
 }
 .acount_form_btns .form_btn_submit {
@@ -774,9 +830,17 @@ header {
   padding-right: 25px;
 }
 .acount_form_btns .btn_reset {
-  display: block;
   width: 90px;
   height: 30px;
+  display: block;
+  background-color: rgb(227, 227, 227);
+  cursor: pointer;
+  transition: 1s;
+}
+.acount_form_btns .btn_submit {
+  width: 90px;
+  height: 30px;
+  display: block;
   background-color: rgb(227, 227, 227);
   cursor: pointer;
   transition: 1s;
@@ -785,36 +849,29 @@ header {
   background-color: rgb(214, 213, 213);
 }
 
-.btn_submit {
-  display: block;
-  width: 90px;
-  height: 30px;
-  background-color: rgb(227, 227, 227);
-  cursor: pointer;
-  transition: 1s;
-}
-
 /*End find tutors*/
 /*BECOME A TUTOR*/
 .background-header-become-tutor {
   background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5a.png);
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
 }
 
 .tutors-benefits-section {
-  align-items: center;
-  justify-content: center;
   background-image: url(../images/office-teaching.jpg);
-  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   filter: grayscale(100%);
 }
 .tutors-benefits-section .tutors_benefits {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 20px;
   z-index: 1;
@@ -837,14 +894,19 @@ header {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: grayscale(0);
 }
 .table-section .your_plan {
   opacity: 90%;
   z-index: 2;
 }
 .table-section .btn-choose {
-  background: rgb(227, 227, 227);
+  background: rgb(184, 183, 183);
   z-index: 2;
+  transition: 0.5s;
+}
+.table-section .btn-choose:hover {
+  background: rgb(227, 227, 227);
 }
 
 /*End become a tutor*/
@@ -852,14 +914,73 @@ header {
 .background-header-contact {
   background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5c.png);
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
+}
+
+.message-img {
+  width: 50%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f7f6f6;
+}
+
+.map-contact {
+  background-image: url(../../images/contact-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(60%);
+}
+.map-contact .map-contact-paragraph {
+  width: 550px;
+  height: 250px;
+  padding: 20px;
+  position: relative;
+  top: 90px;
+  background-color: black;
+  color: #f7f6f6;
+  box-shadow: 3px 3px 3px 3px #f7f6f6;
+  opacity: 70%;
+}
+.map-contact .map-contact-paragraph:hover {
+  background-color: #f7f6f6;
+  color: black;
+  border-color: 2px solid black;
+  font-weight: 500;
+  padding: 20px;
+  text-align: start;
+  box-shadow: 3px 3px 3px 3px rgb(187, 188, 193);
+  opacity: 80%;
 }
 
 .Location {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 50%;
   object-fit: cover;
+  display: flex;
+  flex-flow: column, nowrap;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+.contact-title-find {
+  width: 100%;
+  height: 50px;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.contact-title {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-flow: column, nowrap;
+  font-weight: 500;
+  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 textarea {
@@ -890,133 +1011,7 @@ textarea {
 }
 
 /* -MEDIAQUERYS-*/
-/*FIRST MEDIAQ- 1490px)*/
-@media (max-width: 1419px) {
-  .geo-loc-Eur {
-    position: relative;
-    bottom: 30px;
-  }
-  .geo-loc-Asi {
-    position: relative;
-    bottom: 50px;
-    left: 100px;
-  }
-  .geo-loc-Aus {
-    position: relative;
-    left: 160px;
-    top: 70px;
-  }
-  .geo-loc-Afr {
-    position: relative;
-    right: 5px;
-  }
-  .geo-loc-NAme {
-    position: relative;
-    right: 230px;
-    bottom: 130px;
-  }
-  .geo-loc-SAme {
-    position: relative;
-    right: 130px;
-    bottom: 40px;
-  }
-}
-/*SECOND MEDIAQ- 1238px)*/
-@media (max-width: 1238px) {
-  .geo-loc-Eur {
-    position: relative;
-    bottom: 5px;
-  }
-  .geo-loc-Asi {
-    position: relative;
-    bottom: 20px;
-    left: 100px;
-  }
-  .geo-loc-Aus {
-    position: relative;
-    left: 150px;
-    top: 80px;
-  }
-  .geo-loc-Afr {
-    position: relative;
-    right: 5px;
-    bottom: 0px;
-  }
-  .geo-loc-NAme {
-    position: relative;
-    right: 200px;
-    bottom: 130px;
-  }
-  .geo-loc-SAme {
-    position: relative;
-    right: 110px;
-    bottom: 40px;
-  }
-}
-/*THIRD MEDIAQ- 1120px)*/
-@media (max-width: 1120px) {
-  .geo-loc-Eur {
-    position: relative;
-    top: 20px;
-  }
-  .geo-loc-Asi {
-    position: relative;
-    bottom: 0px;
-    left: 100px;
-  }
-  .geo-loc-Aus {
-    position: relative;
-    left: 130px;
-    top: 80px;
-  }
-  .geo-loc-Afr {
-    position: relative;
-    right: 5px;
-    bottom: 0px;
-  }
-  .geo-loc-NAme {
-    position: relative;
-    right: 170px;
-    bottom: 100px;
-  }
-  .geo-loc-SAme {
-    position: relative;
-    right: 110px;
-    bottom: 40px;
-  }
-}
-/*FOURTH MEDIAQ- 970px)*/
-@media (max-width: 970px) {
-  .geo-loc-Eur {
-    position: relative;
-    top: 40px;
-  }
-  .geo-loc-Asi {
-    position: relative;
-    left: 70px;
-    top: 20px;
-  }
-  .geo-loc-Aus {
-    position: relative;
-    top: 90px;
-    left: 110px;
-  }
-  .geo-loc-Afr {
-    position: relative;
-    right: 5px;
-  }
-  .geo-loc-NAme {
-    position: relative;
-    right: 140px;
-    bottom: 80px;
-  }
-  .geo-loc-SAme {
-    position: relative;
-    right: 95px;
-    bottom: 30px;
-  }
-}
-/*FIFTH MEDIAQ- 620px)*/
+/* MEDIAQ- 620px)*/
 @media (max-width: 620px) {
   .box {
     display: grid;
@@ -1058,25 +1053,31 @@ textarea {
     max-width: 100%;
     height: 990px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: start;
     justify-content: space-between;
     gap: 10px;
-    align-items: start;
   }
   .b5 .card_title {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
     width: 100%;
     height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: 0;
+    justify-content: center;
+    gap: 0;
     padding-bottom: 70px;
     font-size: 1.2rem;
   }
   .b5 .card {
     display: flex;
-    flex-flow: column nowrap;
-    text-align: start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: 0;
     justify-content: center;
+    text-align: start;
     border: 1px solid black;
     max-width: 400px;
     min-height: 300px;
@@ -1099,9 +1100,9 @@ textarea {
   }
   /* HOW IT WORKS*/
   .Orange_image {
-    position: relative;
     width: 250px;
     height: 250px;
+    position: relative;
     top: 70px;
   }
   .span {
@@ -1113,10 +1114,12 @@ textarea {
     z-index: 1;
   }
   .redirection_btn {
-    display: flex;
-    flex-flow: row nowrap;
     width: 200px;
     height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: 0;
     justify-content: center;
     text-align: center;
     position: relative;
@@ -1132,15 +1135,18 @@ textarea {
     bottom: 160px;
   }
   .office-container {
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: center;
     width: 100%;
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: 0;
+    gap: 0;
+    align-content: center;
   }
   .office {
-    width: 100%;
+    width: 100px;
     height: 200px;
     position: relative;
     bottom: 100%;
@@ -1160,9 +1166,25 @@ textarea {
   .container-map-continent {
     height: 700px;
   }
-  .card-title-tutors {
-    padding-top: 0;
-    padding-bottom: 70px;
+  .tutors-card .card-title-tutors {
+    position: relative;
+    bottom: 270px;
+    color: #cecdcd;
+    z-index: 2;
+  }
+  .tutors-card .card-continer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 250px;
+    height: 400px;
+  }
+  .tutors-card .card-continer .rounded-card {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
     z-index: 2;
   }
   .tutors-card-image {
@@ -1186,6 +1208,7 @@ textarea {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: grayscale(0);
   }
 }
 

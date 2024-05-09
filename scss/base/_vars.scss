@@ -1,4 +1,30 @@
-/* font-family: "Frank Ruhl Libre", serif;
-   font_family:Roboto/Font-weight; */
+
+/*--FONTS--*/
+/* font-family: "Frank Ruhl Libre", serif; font_family:Roboto/Font-weight; */
+
    @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+   /*--VARS--*/
+   /* Colors */
+   $nav-gradient: linear-gradient(#bbbcc1, #6b6b6c);
+   $text-gradient:linear-gradient(to top, #6b6b6c, #bbbcc1);
+   $main-grey:rgb(187, 188, 193);
+   $main-yellow:rgb(238 235 223);
+   $text-btn-white:rgb(238 235 223);
+   $bg-btn-dwl: rgb(101, 108, 101);
+   $bg-hov-btn-dwl:rgb(136, 138, 136);
+   $bg-white-card:#f7f6f6;
+   $orange-span:rgb(163, 120, 64);
+   $orange-btn: rgb(223, 198, 139);
+   $search-grey:#6b6b6c;
+   $search-bg-hov: rgb(224, 224, 224);
+   $search-btn-tex-hov:rgb(134, 134, 134);
+   $grey-form:rgb(165, 165, 170);
+   $bg-btn-form:rgb(227, 227, 227);
+   $bg-btn-form-hov:rgb(214, 213, 213);
+   $bg-btn-choose:rgb(184, 183, 183);
+   $bg-yellow-op:rgba(240, 208, 79, 0.8);
+
+   /*border*/
+   $border: 1px solid black;

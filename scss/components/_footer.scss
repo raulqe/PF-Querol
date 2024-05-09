@@ -2,29 +2,21 @@
 
 footer.nav-item {
     width: 60px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    text-align: center;
+    @include flex(row,nowrap,center,space-around,0);
     transition: 1s;
 
 }
 
 .nav-item a:hover {
-    background-color: #f7f6f6;
+    background-color: $bg-white-card;
 }
 
 .secondary-footer {
     width: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column,nowrap,center,center,0);
     .logo-footer {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        justify-content: center;
+        @include flex(row,nowrap,center,center,0);
+       
     }
 
 }

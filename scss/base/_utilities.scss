@@ -1,0 +1,67 @@
+
+/* with/height*/
+
+@mixin wht-heig( $width,$height){
+    width: $width ;
+    height: $height ;
+}
+
+
+/*Flex mixin */
+
+@mixin flex-text($direction,$wrap,$align,$justify,$text){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-items: $align;
+    justify-content: $justify;
+    text-align: $text;
+
+}
+@mixin flex($direction,$wrap,$align,$justify,$gap){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-items: $align;
+    justify-content: $justify;
+    gap:$gap;
+}
+
+
+/*Background Image*/
+
+@mixin bg-img($bg-url,$position,$perc){
+    background-image: $bg-url;
+    background-position:$position;
+    background-repeat: no-repeat;
+    background-size:cover;
+    filter:grayscale($perc);
+}
+
+@mixin img($width,$height,$fit){
+    width: $width;
+    height: $height;
+    object-fit: $fit;
+}
+/* with/height*/
+
+/*Geo-loc*/
+
+@mixin geo-loc{
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+@mixin pos-rb($right,$bottom){
+    right:$right;
+    bottom:$bottom;
+}
+@mixin pos-lb($left,$bottom){
+    left:$left;
+    bottom:$bottom;
+}
+@mixin pos-lt($left,$top){
+    left:$left;
+    top:$top;
+}

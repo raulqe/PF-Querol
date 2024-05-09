@@ -1,7 +1,6 @@
 /* Navbar */
 .logo-nav {
-    width: 30px;
-    height: 30px;
+    @include wht-heig(30px,30px);
     margin: 0;
     padding: 0;
     position: relative;
@@ -54,10 +53,7 @@
 }
 
 .btn-box {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    @include flex(row,nowrap,center,center,0);
 
     .btn_header {
         display: flex;
@@ -72,9 +68,10 @@
         padding: 10px 50px 20px 50px;
         border: 1px solid black;
         transition: 1.5s;
+        z-index: 1;
 
         &:hover {
-            box-shadow: 2px 2px 2px #f7f6f6;
+            box-shadow: 2px 2px 2px $bg-white-card;
             top: 50px;
         }
     }
