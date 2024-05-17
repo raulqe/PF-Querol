@@ -46,20 +46,16 @@
 /* Second header section Image + btn*/
 
 .background-header-index {
-    background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5b.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bg-img(url(../images/pixlr-image-generator-65eb22312e7af35202e36b5b.png),center,0);
 }
 
 .btn-box {
     @include flex(row,nowrap,center,center,0);
 
     .btn_header {
+        @include wht-heig(300px,30px);
         display: flex;
         flex-flow: row nowrap;
-        width: 300px;
-        height: 30px;
         justify-content: center;
         text-align: center;
         position: relative;

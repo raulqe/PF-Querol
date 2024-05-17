@@ -18,5 +18,8 @@ footer.nav-item {
         @include flex(row,nowrap,center,center,0);
        
     }
+    p{
+       font-size:smaller;
+    }
 
 }

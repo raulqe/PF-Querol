@@ -9,7 +9,7 @@
     position: relative;
     top: 80px;
     z-index: 2;
-    border: 3px solid #f7f6f6;
+    border: 3px solid $bg-white-card;
 }
 
 .span {
@@ -26,12 +26,12 @@
     position: relative;
     bottom: 170px;
     background-color: $orange-btn;
-    padding: 20px 50px 30px 50px;
+    padding: 10px 50px 30px 50px;
     border: $border;
     border-radius: 100PX;
     transition: 1s;
     &:hover {
-        box-shadow: 3px 3px 3px #f7f6f6;
+        box-shadow: 3px 3px 3px $bg-white-card;
         background-color: rgb(228, 208, 160);
         bottom: 160px;
     }
@@ -47,7 +47,7 @@
     @include img(100%,160px,cover);
     position: relative;
     bottom: 100%;
-    border: 2px solid whitesmoke;
+    border: 2px solid $bg-white-card;
     
 }
 

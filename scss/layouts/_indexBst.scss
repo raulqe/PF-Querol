@@ -6,12 +6,13 @@ body {
     max-height: 100%;
     background-color: rgb(187, 188, 193);
 
-    h1 h2 h3 {
-        font-family: "Frank Ruhl Libre", serif;
+    h1, h2, h3 {
+        font-family: "Playfair Display","Frank Ruhl Libre", serif;
     }
 
     p {
         font-family: "Roboto", sans-serif;
+        font-weight:300;
 
     }
 
@@ -80,8 +81,8 @@ header {
         background-color: rgba(225, 225, 227, 0.527);
         max-width: 100%;
         max-height: 700px;
-        background: $text-gradient;
-        box-shadow: 3px 3px 3px 3px;
+        background: $bg-white-card;
+        box-shadow: $box-shad1;
     }
 
     h2 {
@@ -97,6 +98,7 @@ header {
     p {
         display: flex;
         justify-content: justify;
+        text-align: justify;
         width: 100%;
         max-width: 380px;
         max-height: max-content;
@@ -111,7 +113,7 @@ header {
     }
 
     iframe:hover {
-        border: 2px solid #f7f6f6;
+        border: 3px solid $main-grey;
     }
 }
 
@@ -132,15 +134,14 @@ header {
 .logo-title-container {
     @include flex-text(column,wrap,center,0,center);
     position: relative;
-    text-shadow: black 3px -3px;
+    text-shadow: $text-shad1;
 
     .logo-title {
         @include wht-heig(75%,auto);
+        @include font(2.5rem,500,italic);
         position: relative;
         top: 250px;
         color: $bg-white-card;
-        font-size: 2.5rem;
-        text-shadow: 3px solid #6b6b6c;
         transition: 2.5s;
         z-index: 2;
 
@@ -152,10 +153,12 @@ header {
     .logo-world {
         @include wht-heig(250px,250px);
         position: relative;
-        bottom: 90px;
-        right: 5px;
+        @include pos-rb(5px,90px);
         opacity: 60%;
         z-index: 1;
+        &:hover{
+            transform: rotate(-180deg);
+        }
     }
 }
 
@@ -193,15 +196,14 @@ header {
         border: $border;
         max-width: 400px;
         min-height: 250px;
-        padding: 15px 15px 15px 15px;
+        padding: 15px;
         background-color: $bg-white-card;
     }
     .card_border_number {
         @include wht-heig(30px,30px,);
         justify-content: center;
         position: relative;
-        left: 0px;
-        bottom: 5px;
+        @include pos-lb(0,5px);
         border-bottom: 2px solid black;
         border-left: 2px solid black;
     }
@@ -209,15 +211,14 @@ header {
         @include wht-heig(25px,25px);
         border: 2px solid black;
         position: relative;
-        left: 5px;
-        bottom: 2px;
+        @include pos-lb(5px,2px);
+       
     }
     .card_number {
         @include wht-heig(15px,15px);
         font-weight: 700;
         position: relative;
-        left: 4px;
-        bottom: 2px;
+        @include pos-lb(4px,2px);
     }
     
     .subtitle {
@@ -238,9 +239,6 @@ header {
 }
 .card-reason-img {
     @include img(100%,180px,cover);
-}
-.card-reason-img {
-    @include img(100%,250px,cover);
     padding-bottom: 20px;
 }
 .card-img {
@@ -258,9 +256,9 @@ header {
     padding: 20px;
     border-top: $border;
     .download_title {
-        font-size: 1rem;
         min-width: 80px;
         height: 40px;
+        font-size: 1rem;
         padding-right: 15px;
         padding-top: 5px;
     }
@@ -274,9 +272,7 @@ header {
     .btn_dwl {
         @include wht-heig(140px,80px);
         font-family: "Roboto", sans-serif;
-        font-weight: 100;
-        font-size: x-small;
-        font-style: normal;
+        @include font(x-small,100,normal);
         color: $text-btn-white;
         background-color: $bg-btn-dwl;
         padding: 10px;

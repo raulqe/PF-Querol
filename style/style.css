@@ -5,10 +5,13 @@
 /* font-family: "Frank Ruhl Libre", serif; font_family:Roboto/Font-weight; */
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 /*--VARS--*/
 /* Colors */
-/*border*/
+/*Border*/
+/*Box-Shadow*/
 /* with/height*/
+/*Font*/
 /*Flex mixin */
 /*Background Image*/
 /* with/height*/
@@ -60,8 +63,9 @@
 .background-header-index {
   background-image: url(../images/pixlr-image-generator-65eb22312e7af35202e36b5b.png);
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
 }
 
 .btn-box {
@@ -73,10 +77,10 @@
   gap: 0;
 }
 .btn-box .btn_header {
-  display: flex;
-  flex-flow: row nowrap;
   width: 300px;
   height: 30px;
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   text-align: center;
   position: relative;
@@ -88,7 +92,7 @@
   z-index: 1;
 }
 .btn-box .btn_header:hover {
-  box-shadow: 2px 2px 2px #f7f6f6;
+  box-shadow: 2px 2px 2px rgb(247, 246, 246);
   top: 50px;
 }
 
@@ -105,7 +109,7 @@ footer.nav-item {
 }
 
 .nav-item a:hover {
-  background-color: #f7f6f6;
+  background-color: rgb(247, 246, 246);
 }
 
 .secondary-footer {
@@ -125,6 +129,9 @@ footer.nav-item {
   justify-content: center;
   gap: 0;
 }
+.secondary-footer p {
+  font-size: smaller;
+}
 
 /*Layouts*/
 /* General style elements */
@@ -134,11 +141,12 @@ body {
   max-height: 100%;
   background-color: rgb(187, 188, 193);
 }
-body h1 h2 h3 {
-  font-family: "Frank Ruhl Libre", serif;
+body h1, body h2, body h3 {
+  font-family: "Playfair Display", "Frank Ruhl Libre", serif;
 }
 body p {
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 body a {
   font-family: "Roboto", sans-serif;
@@ -147,7 +155,7 @@ body a {
   text-decoration: none;
 }
 body .bg-secondary {
-  background: linear-gradient(#bbbcc1, #6b6b6c);
+  background: linear-gradient(rgb(187, 188, 193), rgb(107, 107, 108));
 }
 
 /* HEADER */
@@ -203,8 +211,8 @@ header {
   background-color: rgba(225, 225, 227, 0.527);
   max-width: 100%;
   max-height: 700px;
-  background: linear-gradient(to top, #6b6b6c, #bbbcc1);
-  box-shadow: 3px 3px 3px 3px;
+  background: rgb(247, 246, 246);
+  box-shadow: 1px 1px 1px 1px;
 }
 .b2 h2 {
   display: flex;
@@ -217,6 +225,7 @@ header {
 .b2 p {
   display: flex;
   justify-content: justify;
+  text-align: justify;
   width: 100%;
   max-width: 380px;
   max-height: max-content;
@@ -229,7 +238,7 @@ header {
   border: none;
 }
 .b2 iframe:hover {
-  border: 2px solid #f7f6f6;
+  border: 3px solid rgb(187, 188, 193);
 }
 
 /* Grid area second section  box-container */
@@ -262,16 +271,17 @@ header {
   justify-content: 0;
   text-align: center;
   position: relative;
-  text-shadow: black 3px -3px;
+  text-shadow: black 3px -1px;
 }
 .logo-title-container .logo-title {
   width: 75%;
   height: auto;
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-style: italic;
   position: relative;
   top: 250px;
-  color: #f7f6f6;
-  font-size: 2.5rem;
-  text-shadow: 3px solid #6b6b6c;
+  color: rgb(247, 246, 246);
   transition: 2.5s;
   z-index: 2;
 }
@@ -282,10 +292,13 @@ header {
   width: 250px;
   height: 250px;
   position: relative;
-  bottom: 90px;
   right: 5px;
+  bottom: 90px;
   opacity: 60%;
   z-index: 1;
+}
+.logo-title-container .logo-world:hover {
+  transform: rotate(-180deg);
 }
 
 /* Grid area third section  cards */
@@ -341,15 +354,15 @@ header {
   border: 1px solid black;
   max-width: 400px;
   min-height: 250px;
-  padding: 15px 15px 15px 15px;
-  background-color: #f7f6f6;
+  padding: 15px;
+  background-color: rgb(247, 246, 246);
 }
 .b5 .card_border_number {
   width: 30px;
   height: 30px;
   justify-content: center;
   position: relative;
-  left: 0px;
+  left: 0;
   bottom: 5px;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
@@ -394,12 +407,6 @@ header {
   width: 100%;
   height: 180px;
   object-fit: cover;
-}
-
-.card-reason-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
   padding-bottom: 20px;
 }
 
@@ -418,15 +425,15 @@ header {
   align-items: 0;
   justify-content: space-around;
   gap: 0;
-  background: linear-gradient(#bbbcc1, #6b6b6c);
+  background: linear-gradient(rgb(187, 188, 193), rgb(107, 107, 108));
   width: 100%;
   padding: 20px;
   border-top: 1px solid black;
 }
 .b7 .download_title {
-  font-size: 1rem;
   min-width: 80px;
   height: 40px;
+  font-size: 1rem;
   padding-right: 15px;
   padding-top: 5px;
 }
@@ -443,8 +450,8 @@ header {
   width: 140px;
   height: 80px;
   font-family: "Roboto", sans-serif;
-  font-weight: 100;
   font-size: x-small;
+  font-weight: 100;
   font-style: normal;
   color: rgb(238, 235, 223);
   background-color: rgb(101, 108, 101);
@@ -512,7 +519,7 @@ header {
   position: relative;
   top: 80px;
   z-index: 2;
-  border: 3px solid #f7f6f6;
+  border: 3px solid rgb(247, 246, 246);
 }
 
 .span {
@@ -536,13 +543,13 @@ header {
   position: relative;
   bottom: 170px;
   background-color: rgb(223, 198, 139);
-  padding: 20px 50px 30px 50px;
+  padding: 10px 50px 30px 50px;
   border: 1px solid black;
   border-radius: 100PX;
   transition: 1s;
 }
 .redirection_btn:hover {
-  box-shadow: 3px 3px 3px #f7f6f6;
+  box-shadow: 3px 3px 3px rgb(247, 246, 246);
   background-color: rgb(228, 208, 160);
   bottom: 160px;
 }
@@ -565,7 +572,7 @@ header {
   object-fit: cover;
   position: relative;
   bottom: 100%;
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(247, 246, 246);
 }
 
 /*End how it works*/
@@ -598,22 +605,26 @@ header {
   border: 2px solid whitesmoke;
 }
 .container-map-continent .map-continent-title {
-  width: 400px;
-  height: 300px;
-  background-color: #f7f6f6;
+  width: 350px;
+  height: 250px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  background-color: rgb(247, 246, 246);
   border-color: 2px solid black;
-  font-weight: 500;
   padding: 20px;
-  text-align: start;
+  text-align: center;
   box-shadow: 3px 3px 3px 3px rgb(187, 188, 193);
-  opacity: 70%;
+  opacity: 80%;
+  transition: 1s;
 }
 .container-map-continent .map-continent-title:hover {
-  transform: scale(120%);
+  transform: scale(80%);
   opacity: 80%;
 }
 .container-map-continent .search-tutors-continet {
-  background: #6b6b6c;
+  padding: 5px;
+  background: rgb(107, 107, 108);
   border: 3px solid gray;
   border-radius: 15px;
   position: relative;
@@ -623,6 +634,9 @@ header {
   max-width: 100%;
   border-radius: 10px 0px 0px 10px;
   border: 1px solid gray;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-style: bold;
 }
 .container-map-continent .search-tutors-continet .input-search-btn:hover {
   background-color: rgb(224, 224, 224);
@@ -631,7 +645,7 @@ header {
 }
 .container-map-continent .search-tutors-continet .search-btn {
   border-radius: 0 10px 10px 0px;
-  border: 2px solid #6b6b6c;
+  border: 2px solid rgb(107, 107, 108);
 }
 .container-map-continent .search-tutors-continet .search-svg {
   width: 16px;
@@ -650,6 +664,7 @@ header {
 .tutors-card .card-title-tutors {
   width: 100%;
   height: 50px;
+  color: #36201b;
   font-size: 1.5rem;
   font-weight: 700;
   padding-top: 35px;
@@ -673,8 +688,20 @@ header {
   z-index: 2;
 }
 .tutors-card .card-continer .rounded-card:hover {
-  background-color: #acaaaa;
+  background-color: rgb(172, 170, 170);
   color: rgb(29, 27, 27);
+}
+.tutors-card .card-continer .rounded-card .rounded-border {
+  left: 100px;
+  bottom: 30px;
+}
+.tutors-card .card-continer .rounded-card .rounded-span {
+  left: 5px;
+  bottom: 0;
+}
+.tutors-card .card-continer .rounded-card .rounded-number {
+  left: 3px;
+  bottom: 0;
 }
 
 /*Fourth main section (cards)*/
@@ -699,9 +726,8 @@ header {
   align-items: center;
   justify-content: 0;
   gap: 0;
-  background-color: rgb(165, 165, 170);
-  padding: 10px;
-  border: 3px solid #f7f6f6;
+  border: 3px double rgb(247, 246, 246);
+  box-shadow: 2px 2px 2px 2px rgb(187, 188, 193);
 }
 .acount_form_section .acount_form_title {
   width: 100%;
@@ -741,7 +767,7 @@ header {
   outline: none;
 }
 .acount_form_column_1 input:hover {
-  background-color: search-bg-hov;
+  background-color: rgb(224, 224, 224);
   color: rgb(134, 134, 134);
   transition: 1s;
 }
@@ -834,6 +860,8 @@ header {
   height: 30px;
   display: block;
   background-color: rgb(227, 227, 227);
+  border-radius: 15px;
+  border: none;
   cursor: pointer;
   transition: 1s;
 }
@@ -842,6 +870,8 @@ header {
   height: 30px;
   display: block;
   background-color: rgb(227, 227, 227);
+  border-radius: 15px;
+  border: none;
   cursor: pointer;
   transition: 1s;
 }
@@ -882,11 +912,15 @@ header {
   z-index: 1;
 }
 .tutors-benefits-section .tutors_benefits p {
-  font-size: medium;
-  font-weight: 500;
+  font-size: small;
+  font-weight: 300;
+  text-align: justify;
   background: rgba(240, 208, 79, 0.8);
   padding: 15px;
   z-index: 1;
+}
+.tutors-benefits-section .tutors_benefits p .letter-style {
+  font-weight: 400;
 }
 
 .table-section {
@@ -919,12 +953,76 @@ header {
   filter: grayscale(0);
 }
 
-.message-img {
-  width: 50%;
-  height: 30%;
+.Find-us {
+  background-image: url(../../images/contact-NY.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0);
+  padding-top: 100px;
+}
+.Find-us .find-us-container {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.Find-us .find-us-container .flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-front {
+  height: 200px;
+  transform: rotateY(180deg);
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-front .message-img {
+  width: 100%;
+  height: 300px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #f7f6f6;
+  opacity: 70%;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-front:hover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-back {
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 50%;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.8s;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-back .contact-subt-find {
+  width: 100%;
+  height: 46px;
+  font-size: 1.5rem;
+  background: rgb(238, 235, 223);
+  padding: 5px;
+  opacity: 70%;
+}
+.Find-us .find-us-container .flip-card .flip-card-inner .flip-card-back .contact-title-find {
+  width: 100%;
+  height: 46px;
+  font-size: 1.5rem;
+  padding: 5px;
+  opacity: 70%;
+  background: rgb(238, 235, 223);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
 .map-contact {
@@ -935,18 +1033,21 @@ header {
   filter: grayscale(60%);
 }
 .map-contact .map-contact-paragraph {
-  width: 550px;
-  height: 250px;
+  width: 100%;
+  height: 350px;
   padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-content: center;
   position: relative;
-  top: 90px;
+  top: 0px;
   background-color: black;
-  color: #f7f6f6;
-  box-shadow: 3px 3px 3px 3px #f7f6f6;
+  color: rgb(247, 246, 246);
+  box-shadow: 2px 2px 2px 2px rgb(247, 246, 246);
   opacity: 70%;
 }
 .map-contact .map-contact-paragraph:hover {
-  background-color: #f7f6f6;
+  background-color: rgb(247, 246, 246);
   color: black;
   border-color: 2px solid black;
   font-weight: 500;
@@ -958,12 +1059,14 @@ header {
 
 .Location {
   width: 100%;
-  height: 50%;
+  height: 40%;
   object-fit: cover;
   display: flex;
   flex-flow: column, nowrap;
-  padding-top: 20px;
-  gap: 20px;
+  border: 5px solid rgb(247, 246, 246);
+  box-shadow: 1px 1px 1px 1px rgb(187, 188, 193);
+  padding-top: 0px;
+  margin-top: 10px;
 }
 
 .contact-title-find {
@@ -978,9 +1081,22 @@ header {
   height: 50px;
   display: flex;
   flex-flow: column, nowrap;
+  align-self: flex-start;
   font-weight: 500;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.contact-form {
+  width: 85%;
+  border: 3px double rgb(247, 246, 246);
+  box-shadow: 2px 2px 2px 2px rgb(187, 188, 193);
+}
+
+.contact-phone {
+  padding: 10px 0;
+}
+.contact-phone label {
+  padding-right: 20px;
 }
 
 textarea {
@@ -1011,6 +1127,16 @@ textarea {
 }
 
 /* -MEDIAQUERYS-*/
+.map-continent-title {
+  width: 340px;
+  height: 250px;
+  font-weight: 200;
+  padding: 10px;
+}
+.map-continent-title:hover {
+  transform: scale(105%);
+}
+
 /* MEDIAQ- 620px)*/
 @media (max-width: 620px) {
   .box {
@@ -1027,7 +1153,7 @@ textarea {
     display: flex;
     justify-content: justify;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     max-height: max-content;
     font-size: 0.9rem;
   }
@@ -1082,7 +1208,7 @@ textarea {
     max-width: 400px;
     min-height: 300px;
     padding: 15px;
-    background-color: #f7f6f6;
+    background-color: rgb(247, 246, 246);
   }
   .b5 .card_border_number {
     width: 30px;
@@ -1131,7 +1257,7 @@ textarea {
     transition: 1s;
   }
   .redirection_btn:hover {
-    box-shadow: 3px 3px 3px #f7f6f6;
+    box-shadow: 3px 3px 3px rgb(247, 246, 246);
     bottom: 160px;
   }
   .office-container {
@@ -1146,8 +1272,8 @@ textarea {
     align-content: center;
   }
   .office {
-    width: 100px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     position: relative;
     bottom: 100%;
     border: 2px solid whitesmoke;
@@ -1165,6 +1291,14 @@ textarea {
   }
   .container-map-continent {
     height: 700px;
+  }
+  .container-map-continent .map-continent-title {
+    width: 300px;
+    height: 230px;
+  }
+  .container-map-continent .map-continent-title:hover {
+    transform: scale(110%);
+    opacity: 80%;
   }
   .tutors-card .card-title-tutors {
     position: relative;
@@ -1186,6 +1320,22 @@ textarea {
     height: 290px;
     border-radius: 50%;
     z-index: 2;
+  }
+  .tutors-card .card-continer .rounded-card .rounded-border {
+    left: 100px;
+    top: 0px;
+    bottom: 50px;
+  }
+  .tutors-card .card-continer .rounded-card .rounded-span {
+    left: 5px;
+    bottom: 0px;
+  }
+  .tutors-card .card-continer .rounded-card .rounded-number {
+    left: 5px;
+    bottom: 0px;
+  }
+  .tutors-card .card-continer h3 {
+    padding-top: 20px;
   }
   .tutors-card-image {
     height: 1100px;

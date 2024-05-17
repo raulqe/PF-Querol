@@ -1,6 +1,16 @@
 /* -MEDIAQUERYS-*/
 
-
+//@media(max-width: 817px){
+    .map-continent-title{
+        @include wht-heig(340px,250px);
+        font-weight:200;
+        padding: 10px;
+        &:hover{
+            transform: scale(105%);
+            
+           }
+    }
+//}
 
 /* MEDIAQ- 620px)*/
 
@@ -23,13 +33,13 @@
     }
     .b2{
         .text-container {
-            background-color: rgba(225, 225, 227, 0.527);
+            background-color: rgba(225, 225, 227, 0.527);    
         }
         p {
             display: flex;
             justify-content: justify;
             width: 100%;
-            max-width: 280px;
+            max-width: 300px;
             max-height: max-content;
             font-size: 0.9rem;
         }
@@ -127,7 +137,9 @@
     }
 
     .office {
-        @include wht-heig(100px,200px);
+        //@include wht-heig(380px,300px);
+        width: 350px;
+        height: 350px;
         position: relative;
         bottom: 100%;
         border: 2px solid whitesmoke;
@@ -147,6 +159,14 @@
 
     .container-map-continent {
         height: 700px;
+        .map-continent-title{
+            width: 300px;
+            height: 230px;
+            &:hover{
+                transform: scale(110%);
+                opacity: 80%;
+               }
+        }
     }
 
     .tutors-card{
@@ -164,6 +184,23 @@
                 @include wht-heig(290px,290px);
                 border-radius: 50%;
                 z-index: 2;
+
+                .rounded-border{
+                    left: 100px;
+                    top:0px;
+                    bottom: 50px;
+                }
+                .rounded-span{
+                    left: 5px;
+                    bottom: 0px;
+                }
+                .rounded-number{
+                    left: 5px;
+                    bottom: 0px;
+                }
+            }
+            h3{
+                padding-top: 20px;
             }
         }
     }

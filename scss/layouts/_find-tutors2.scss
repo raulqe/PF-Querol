@@ -20,20 +20,22 @@
     @include bg-img(url(../images/Map-action.jpg),50% 65%,0);
     border: 2px solid whitesmoke;
     .map-continent-title{
-        @include wht-heig(400px,300px);
+        @include wht-heig(350px,250px);
+        @include font(1.4rem,400,italic);
        background-color: $bg-white-card ;
-       border-color: 2px solid black;
-       font-weight:500;
+       border-color: $border2;
        padding: 20px;
-       text-align: start;
+       text-align: center;
        box-shadow: 3px 3px 3px 3px $main-grey;
-       opacity: 70%;
+       opacity: 80%;
+       transition: 1s;
        &:hover{
-        transform: scale(120%);
+        transform: scale(80%);
         opacity: 80%;
        }
     }
     .search-tutors-continet {
+        padding: 5px;
         background: $search-grey;
         border: 3px solid gray;
         border-radius: 15px;
@@ -43,6 +45,10 @@
             max-width: 100%;
             border-radius: 10px 0px 0px 10px;
             border: 1px solid gray;
+            padding: 0 10px;
+            font-size:1rem;
+            font-style: bold;
+            
             &:hover {
                 background-color: $search-bg-hov;
                 color: $search-btn-tex-hov;
@@ -69,8 +75,8 @@
 .tutors-card {
     @include bg-img(url(../images/tutors-image.jpg),50%,0);
     .card-title-tutors {
-        width: 100%;
-        height: 50px;
+        @include wht-heig(100%,50px);
+        color: #36201b;
         font-size: 1.5rem;
         font-weight: 700;
         padding-top: 35px;
@@ -81,18 +87,26 @@
         .rounded-card {
             @include wht-heig(290px,290px);
             border-radius: 50%;
-            border: 2px solid black;
+            border: $border2;
             opacity: 95%;
             transition: 1s;
             z-index: 2;
             &:hover{
-                background-color: #acaaaa;
+                background-color: rgb(172, 170, 170);
                 color:rgb(29, 27, 27);
+            }
+            .rounded-border{
+                @include pos-lb(100px,30px);
+            }
+            .rounded-span{
+                @include pos-lb(5px,0);
+            }
+            .rounded-number{
+                @include pos-lb(3px,0);
             }
         }
     }
 }
-
 /*Fourth main section (cards)*/
 
 .acount_form_section {
@@ -103,9 +117,8 @@
     .main_Acount_form {
         @include wht-heig(95%,550px);
         @include flex(row,wrap,center,0,0);
-        background-color: $grey-form;
-        padding: 10px;
-        border: 3px solid #f7f6f6;
+        border: 3px double $bg-white-card;
+        box-shadow: 2px 2px 2px 2px $main-grey;
     }
     .acount_form_title {
         @include wht-heig(100%,15%);
@@ -135,7 +148,7 @@
         border: $main-grey;
         outline: none;
         &:hover{
-            background-color: search-bg-hov;
+            background-color: $search-bg-hov;
             color: $search-btn-tex-hov;
             transition: 1s;
         }
@@ -157,6 +170,7 @@
         label {
             padding-right: 4.8rem;
         }
+        
     }
     .acount_form_phone {
         width: 100%;
@@ -230,6 +244,8 @@
         @include wht-heig(90px,30px);
         display: block;
         background-color: $bg-btn-form;
+        border-radius: 15px;
+        border:none;
         cursor: pointer;
         transition: 1s;
     }
@@ -237,6 +253,8 @@
         @include wht-heig(90px,30px);
         display: block;
         background-color: $bg-btn-form;
+        border-radius: 15px;
+        border:none;
         cursor: pointer;
         transition: 1s;
     }

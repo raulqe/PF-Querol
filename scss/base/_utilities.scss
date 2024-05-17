@@ -5,7 +5,12 @@
     width: $width ;
     height: $height ;
 }
-
+/*Font*/
+@mixin font($size,$weight,$style){
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+}
 
 /*Flex mixin */
 
